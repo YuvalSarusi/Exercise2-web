@@ -8,8 +8,7 @@ class LoginPage extends React.Component {
         username: "",
         password: "",
         showError: false,
-        response:"",
-        mm:""
+        response:""
     }
 
     onUsernameChange = (e) => {

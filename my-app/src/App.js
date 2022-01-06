@@ -1,23 +1,21 @@
 import './App.css';
 import * as React from "react";
 import {BrowserRouter} from "react-router-dom";
-import ProfilePage from "./ProfilePage";
-import PostsPage from "./PostsPage";
+import ProfilePage from "./HomePage";
 import {Route} from "react-router";
 import NavigationBar from "./NavigationBar";
 import LoginPage from "./LoginPage";
 import Cookies from "universal-cookie";
-import FollowedPage from "./FollowedPage";
-import FollowedProfilePage from "./FollowedProfilePage";
+import FollowedPage from "./Search";
+import FollowedPage from "./Settings";
+import FollowedPage from "./StoresList";
 
 class App extends React.Component {
 
   state = {
     isLoggedIn: false,
     token : "",
-    newUser: false,
-    mm:""
-
+    newUser: false
 }
 
   componentDidMount() {
@@ -51,11 +49,11 @@ class App extends React.Component {
                       :
                       <div style={{display: "flex", alignItems: "start", marginTop: "50px"}}>
                         <NavigationBar/>
-                        <Route path={"/"} component={ProfilePage} exact={true}/>
-                        <Route path={"/profile"} component={ProfilePage} exact={true}/>
-                        <Route path={"/posts"} component={PostsPage} exact={true}/>
-                        <Route path={"/followed"} component={FollowedPage} exact={true}/>
-                        <Route path={"/user/:userId"} component={FollowedProfilePage}/>
+                        <Route path={"/"} component={homePage} exact={true}/>
+                        <Route path={"/home-page"} component={homePage} exact={true}/>
+                        <Route path={"/Stores-List"} component={StoresList} exact={true}/>
+                        <Route path={"/search"} component={search} exact={true}/>
+                        <Route path={"/settings"} component={settings} exact={true}/>
                       </div>
 
                   :

@@ -7,9 +7,7 @@ class SignUp extends React.Component {
     state = {
         username: "",
         password: "",
-        showError: "",
-        mm:""
-
+        showError: ""
     }
 
     onUsernameChange = (e) => {
