@@ -15,8 +15,10 @@ class App extends React.Component {
   state = {
     isLoggedIn: false,
     token : "",
-    newUser: false
-  }
+    newUser: false,
+    mm:""
+
+}
 
   componentDidMount() {
     const cookies = new Cookies();
