@@ -1,14 +1,15 @@
 import './App.css';
 import * as React from "react";
 import {BrowserRouter} from "react-router-dom";
-import ProfilePage from "./HomePage";
+import HomePage from "./HomePage";
 import {Route} from "react-router";
 import NavigationBar from "./NavigationBar";
 import LoginPage from "./LoginPage";
 import Cookies from "universal-cookie";
-import FollowedPage from "./Search";
-import FollowedPage from "./Settings";
-import FollowedPage from "./StoresList";
+import Search from "./Search";
+import Settings from "./Settings";
+import StoresList from "./StoresList";
+import axios from "axios";
 
 class App extends React.Component {
 
@@ -45,20 +46,19 @@ class App extends React.Component {
             {
               this.state.isLoggedIn ?
                   this.state.newUser?
-                      <Route path={"/"} component={settings}/>
+                      <Route path={"/"} component={Settings}/>
                       :
                       <div style={{display: "flex", alignItems: "start", marginTop: "50px"}}>
                         <NavigationBar/>
-                        <Route path={"/"} component={homePage} exact={true}/>
-                        <Route path={"/home-page"} component={homePage} exact={true}/>
+                        <Route path={"/"} component={HomePage} exact={true}/>
+                        <Route path={"/home-page"} component={HomePage} exact={true}/>
                         <Route path={"/Stores-List"} component={StoresList} exact={true}/>
-                        <Route path={"/search"} component={search} exact={true}/>
-                        <Route path={"/settings"} component={settings} exact={true}/>
+                        <Route path={"/search"} component={Search} exact={true}/>
+                        <Route path={"/settings"} component={Settings} exact={true}/>
                       </div>
-
                   :
                   <div>
-                    <Route path={"/"} component={LoginPage}/>
+                    <Route path={"/"} component={HomePage}/>
                   </div>
             }
           </BrowserRouter>

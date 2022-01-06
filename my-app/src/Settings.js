@@ -3,7 +3,7 @@ import * as React from "react";
 import Cookies from "universal-cookie/es6";
 import axios from "axios";
 
-class settings extends React.Component {
+class Settings extends React.Component {
     state = {
 
     }
@@ -22,4 +22,4 @@ class settings extends React.Component {
 
 
 
-export default settings;
+export default Settings;
